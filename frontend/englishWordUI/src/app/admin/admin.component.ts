@@ -47,11 +47,4 @@ export class AdminComponent implements OnInit {
     })
   }
 
-
-
-  add(wordModel:WordModel){
-
-  }
-
-
 }

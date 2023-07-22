@@ -1,1 +1,18 @@
-<p>word-add works!</p>
+<div class="row">
+    <div class="col-md-6">
+        <form>
+            <div class="mt-2">
+                <label for="expression" class="form-label">Expression</label>
+                <input type="text" class="form-control" name="expression" [(ngModel)]="wordModel.expression">
+            </div>
+            <div class="mt-2">
+                <label for="definition" class="form-label">Definition</label>
+                <input type="text" class="form-control" name="definition" [(ngModel)]="wordModel.definition">
+            </div>
+
+
+            <button class="btn btn-outline-warning m-2" (click)="save()">Save</button>
+            <button class="btn btn-outline-danger m-2 " routerLink="/admin">Cancel</button>
+        </form>
+    </div>
+</div>

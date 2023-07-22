@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AdminComponent } from './admin/admin.component';
 import { WordUpdateComponent } from './admin/word-update/word-update.component';
+import { WordAddComponent } from './admin/word-add/word-add.component';
 
 const routes: Routes = [
   {
@@ -14,7 +15,8 @@ const routes: Routes = [
     path: 'admin', component: LayoutComponent,
     children:[
       {path:'',component:AdminComponent},
-      {path:'word-update/:id',component:WordUpdateComponent}
+      {path:'word-update/:id',component:WordUpdateComponent},
+      {path:'word-add',component:WordAddComponent}
     ]
   },
   {
