@@ -17,6 +17,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { environment } from 'src/environments/environment.development';
 import { FormsModule } from '@angular/forms';
 import { ExamplesModalComponent } from './home/examples-modal/examples-modal.component';
+import { SearchPipe } from './home/home/pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ExamplesModalComponent } from './home/examples-modal/examples-modal.com
     NavbarComponent,
     LayoutComponent,
     NotFoundComponent,
-    ExamplesModalComponent
+    ExamplesModalComponent,
+    SearchPipe
 
   ],
   imports: [

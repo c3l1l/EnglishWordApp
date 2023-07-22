@@ -7,9 +7,14 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <small *ngFor="let example of word.examples">
-            {{example.statement}}
-          </small>
+            <ul>
+                <li *ngFor="let example of word.examples">
+                    <small >
+                        {{example.statement}}
+                      </small>
+                </li>
+            </ul>
+
 
         </div>
         <div class="modal-footer">

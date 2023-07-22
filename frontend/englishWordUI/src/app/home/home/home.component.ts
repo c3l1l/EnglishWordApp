@@ -11,6 +11,7 @@ import { ErrorService } from '../shared/error.service';
 })
 export class HomeComponent implements OnInit {
   wordList:WordModel[]=[];
+  filterText:string="";
   constructor(private toastr:ToastrService,private wordService:WordService,private errorService:ErrorService){
 
   }

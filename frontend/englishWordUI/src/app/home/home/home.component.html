@@ -1,5 +1,14 @@
+<div class="row mt-2">
+    <div class="col-md-4">
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="filterText" [ngModelOptions]="{standalone:true}">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+    </div>
+</div>
+ss:{{filterText}}
 <div class="row">
-    <div class=" col-lg-6 col-md-4 mt-2 g-2"  *ngFor="let word of wordList">
+    <div class=" col-lg-6 col-md-4 mt-2 g-2"  *ngFor="let word of wordList | searchPipe:filterText">
         <div class="card">
             <div class="card-header">
                 {{word.expression}}
