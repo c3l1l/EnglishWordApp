@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule} from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +13,8 @@ import { HomeComponent } from './home/home/home.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { LayoutComponent } from './layouts/layout.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ToastrModule } from 'ngx-toastr';
+import { environment } from 'src/environments/environment.development';
 
 @NgModule({
   declarations: [
@@ -22,11 +28,16 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
-
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    {provide:'apiUrl',useValue:environment.apiUrl}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
