@@ -19,6 +19,8 @@ import { FormsModule } from '@angular/forms';
 import { ExamplesModalComponent } from './home/examples-modal/examples-modal.component';
 import { SearchPipe } from './pipes/search.pipe';
 import { AdminComponent } from './admin/admin.component';
+import { WordAddComponent } from './admin/word-add/word-add.component';
+import { WordUpdateComponent } from './admin/word-update/word-update.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { AdminComponent } from './admin/admin.component';
     NotFoundComponent,
     ExamplesModalComponent,
     SearchPipe,
-    AdminComponent
+    AdminComponent,
+    WordAddComponent,
+    WordUpdateComponent
 
   ],
   imports: [

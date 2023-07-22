@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-6">
+        <form>
+            <div class="mt-2">
+                <label for="expression" class="form-label">Expression</label>
+                <input type="text" class="form-control" name="expression" [(ngModel)]="wordModel.expression">
+            </div>
+            <div class="mt-2">
+                <label for="definition" class="form-label">Definition</label>
+                <input type="text" class="form-control" name="definition" [(ngModel)]="wordModel.definition">
+            </div>
+            <div class="mt-2">
+                Exampless:
+                <div *ngIf="wordModel.examples!=null">
+                    <ul>
+                        <li *ngFor="let example of wordModel.examples">
+                            <small class="text-danger">{{example.statement}}</small>
+                        </li>
+                    </ul>
+                </div>
+                <div *ngIf="wordModel.examples==null">
+                    <small class="text-danger fs-3">No examples</small>
+                </div>
+            </div>
+            <button class="btn btn-outline-warning m-2" (click)="update()">Update</button>
+            <button class="btn btn-outline-danger m-2 " routerLink="/admin">Cancel</button>
+        </form>
+    </div>
+</div>

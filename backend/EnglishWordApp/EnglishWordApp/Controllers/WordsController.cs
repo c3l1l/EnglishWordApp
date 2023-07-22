@@ -1,6 +1,7 @@
 ﻿using EnglishWordApp.DbContexts;
 using EnglishWordApp.Dtos;
 using EnglishWordApp.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -16,7 +17,7 @@ namespace EnglishWordApp.Controllers
         {
             _dbContext = dbContext;
         }
-
+        [AllowAnonymous]
         [HttpGet]
         public async Task<CustomResponseDto<List<Word>>> GetAll()
         {
@@ -32,6 +33,7 @@ namespace EnglishWordApp.Controllers
             return new CustomResponseDto<List<Word>>() { Errors = new List<string>() { "Data not found!" }, StatusCode = 404 };
 
         }
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<CustomResponseDto<Word>> GetById(int id)
         {
@@ -67,7 +69,7 @@ namespace EnglishWordApp.Controllers
                 return new CustomResponseDto<Word>() { Errors = new List<string>() { $"Something went wrong!" }, StatusCode = 404 };
             }
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<CustomResponseDto<NoContentResult>> Add(int id)
         {
             try
