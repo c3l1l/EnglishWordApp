@@ -16,14 +16,15 @@ export class HomeComponent implements OnInit {
   }
   ngOnInit(): void {
     this.getAllWords();
-    this.toastr.success("Test message","Title test",);
+
   }
 
   getAllWords(){
       this.wordService.getAll().subscribe({
         next:(res:any)=>{
             this.wordList=res.data;
-            console.log(this.wordList);
+            console.log("----");
+            console.log(this.wordList[0].examples[0].statement);
         },
         error:(err)=>{
             this.errorService.errorHandler(err);

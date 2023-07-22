@@ -15,6 +15,8 @@ import { LayoutComponent } from './layouts/layout.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ToastrModule } from 'ngx-toastr';
 import { environment } from 'src/environments/environment.development';
+import { FormsModule } from '@angular/forms';
+import { ExamplesModalComponent } from './home/examples-modal/examples-modal.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { environment } from 'src/environments/environment.development';
     HomeComponent,
     NavbarComponent,
     LayoutComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ExamplesModalComponent
 
   ],
   imports: [
@@ -33,6 +36,7 @@ import { environment } from 'src/environments/environment.development';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FormsModule,
     ToastrModule.forRoot()
   ],
   providers: [
