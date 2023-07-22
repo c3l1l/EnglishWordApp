@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  isActive(url:string){
+    return location.pathname==url;
+  }
 }

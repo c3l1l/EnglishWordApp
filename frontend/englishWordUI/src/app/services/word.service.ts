@@ -16,5 +16,9 @@ export class WordService implements OnInit {
       return this.http.get(`${this.apiUrl}/words`);
   }
 
+  getById(id:number){
+     return this.http.get(`${this.apiUrl}/words/${id}`);
+  }
+
 
 }

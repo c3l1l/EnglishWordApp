@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { WordService } from './services/word.service';
-import { WordModel } from './models/word.model';
+import { WordService } from '../../services/word.service';
+import { WordModel } from '../../models/word.model';
 import { ErrorService } from '../shared/error.service';
 
 @Component({

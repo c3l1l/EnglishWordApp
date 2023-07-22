@@ -1,0 +1,39 @@
+
+<div class="row mt-2">
+    <div class="col-sm-6 col-md-2 offset-md-1">
+        <button class="btn btn-info">Add New Word</button>
+    </div>
+    <div class=" col-sm-6 col-md-8">
+        <form class="d-flex float-end" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="filterText" [ngModelOptions]="{standalone:true}">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-10 offset-md-1">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Expression</th>
+                    <th>Definition</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let word of wordList | searchPipe:filterText let index=index ">
+                    <td>{{index+1}}</td>
+                    <td>{{word.expression}}</td>
+                    <td>
+                        <p class="fw-light fs-6">{{word.definition}}</p>
+                    </td>
+                    <td>
+                        <button class="btn btn-outline-warning ">Update</button>
+                        <button class="btn btn-outline-danger mx-2">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

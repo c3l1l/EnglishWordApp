@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { WordModel } from '../home/models/word.model';
-import { ExampleModel } from '../home/models/example.model';
+import { WordModel } from '../../models/word.model';
+import { ExampleModel } from '../../models/example.model';
 
 @Component({
   selector: 'app-examples-modal',
