@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: AdminPage
+  },
+  {
+    path: 'word-add',
+    loadChildren: () => import('./word-add/word-add.module').then( m => m.WordAddPageModule)
+  },
+  {
+    path: 'word-update',
+    loadChildren: () => import('./word-update/word-update.module').then( m => m.WordUpdatePageModule)
   }
 ];
 
