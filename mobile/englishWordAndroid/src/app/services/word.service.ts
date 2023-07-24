@@ -13,4 +13,7 @@ export class WordService implements OnInit {
   getAll(){
     return this.http.get(`${this.apiUrl}/words`);
   }
+  delete(id:number){
+    return this.http.delete(`${this.apiUrl}/words/${id}`);
+  }
 }

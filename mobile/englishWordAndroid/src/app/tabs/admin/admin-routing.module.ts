@@ -13,7 +13,7 @@ const routes: Routes = [
     loadChildren: () => import('./word-add/word-add.module').then( m => m.WordAddPageModule)
   },
   {
-    path: 'word-update',
+    path: 'word-update/:id',
     loadChildren: () => import('./word-update/word-update.module').then( m => m.WordUpdatePageModule)
   }
 ];

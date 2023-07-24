@@ -13,8 +13,8 @@
   </ion-fab>
   <ion-list>
     <ion-item *ngFor="let word of wordList">
-      <ion-fab-button color="warning" size="small"><ion-icon name="create-outline"></ion-icon></ion-fab-button>
-      <ion-fab-button color="danger" size="small"><ion-icon name="trash-outline"></ion-icon></ion-fab-button>
+      <ion-fab-button color="warning" size="small" routerLink="/admin/word-update/{{word.id}}"><ion-icon name="create-outline"></ion-icon></ion-fab-button>
+      <ion-fab-button color="danger" size="small" (click)="deleteConfirm(word.id)"><ion-icon name="trash-outline"></ion-icon></ion-fab-button>
 
       <ion-label>
         <h6>{{word.expression}}</h6>
