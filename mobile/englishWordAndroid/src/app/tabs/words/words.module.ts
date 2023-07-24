@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { WordsPageRoutingModule } from './words-routing.module';
 
 import { WordsPage } from './words.page';
+import { WordsPipe } from './pipes/words.pipe';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { WordsPage } from './words.page';
     IonicModule,
     WordsPageRoutingModule
   ],
-  declarations: [WordsPage]
+  declarations: [WordsPage, WordsPipe]
 })
 export class WordsPageModule {}

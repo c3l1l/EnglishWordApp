@@ -15,6 +15,7 @@ export class WordsPage implements OnInit {
 
   wordList:WordModel[]=[];
    errorList:string[]=[];
+   filterText:string="";
 
   constructor(
     private modalController:ModalController,

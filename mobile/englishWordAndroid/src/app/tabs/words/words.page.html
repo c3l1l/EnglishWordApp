@@ -2,10 +2,12 @@
   <ion-toolbar>
     <ion-title class="ion-text-center">Words</ion-title>
   </ion-toolbar>
+  <ion-searchbar [(ngModel)]="filterText"></ion-searchbar>
+
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card *ngFor="let word of wordList">
+  <ion-card *ngFor="let word of wordList | wordsPipe:filterText">
     <ion-card-header>
       <ion-icon name="pricetag-outline" style="font-size: 25px;"></ion-icon>
       <ion-card-title>{{word.expression}}</ion-card-title>
