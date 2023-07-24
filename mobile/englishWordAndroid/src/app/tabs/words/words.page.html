@@ -1,13 +1,25 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>words</ion-title>
+    <ion-title class="ion-text-center">Words</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">words</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card *ngFor="let word of wordList">
+    <ion-card-header>
+      <ion-icon name="pricetag-outline"></ion-icon>
+
+      <ion-card-title>{{word.expression}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+    {{word.definition}}
+    </ion-card-content>
+    <ion-button (click)="presentModal(word.examples)" color="tertiary" expand="block" fill="clear" shape="round">
+      Examples
+    </ion-button>
+  </ion-card>
+
+
+
 </ion-content>

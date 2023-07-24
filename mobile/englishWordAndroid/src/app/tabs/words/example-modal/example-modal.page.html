@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <!-- <ion-back-button slot="start" defaultHref="/words"></ion-back-button> -->
+  <ion-button color="tertiary" (click)="dismiss()" expand="block" fill="clear" shape="round">
+    Close
+  </ion-button>
+</ion-header>
+
+
+<ion-content fullscreen class="ion-padding">
+  <ion-list *ngIf="exampleItems.length > 0">
+    <ion-item-divider>
+      <ion-label color="warning" size="large">
+        Examples
+       </ion-label>
+    </ion-item-divider>
+
+  <ion-item  *ngFor="let example of exampleItems" color="light">
+    <ion-icon name="information-circle-outline" color="warning"></ion-icon>
+    <h6>{{example.statement}} </h6>
+  </ion-item>
+  </ion-list>
+  <div *ngIf="exampleItems.length<1">
+    <h5 style="color:red">No Examples !</h5>
+  </div>
+
+</ion-content>

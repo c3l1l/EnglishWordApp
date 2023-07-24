@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: WordsPage
+  },
+  {
+    path: 'example-modal',
+    loadChildren: () => import('./example-modal/example-modal.module').then( m => m.ExampleModalPageModule)
   }
 ];
 
