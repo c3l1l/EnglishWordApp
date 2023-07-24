@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NgModule, inject } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { AuthService } from '../services/auth.service';
 
 const routes: Routes = [
 {
@@ -16,6 +17,7 @@ const routes: Routes = [
     },
     {
       path: 'admin',
+      canActivate:[()=>inject(AuthService).isCheckAuth()],
       loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule),
 
     },
