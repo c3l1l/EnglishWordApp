@@ -1,0 +1,7 @@
+{
+  "name": "englishWordAndroid",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

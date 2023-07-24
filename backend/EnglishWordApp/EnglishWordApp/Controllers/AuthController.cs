@@ -20,14 +20,16 @@ namespace EnglishWordApp.Controllers
         }
 
         [HttpPost("[Action]")]
-        public IActionResult UserLogin(UserLoginDto userLoginDto)
+        public CustomResponseDto<TokenModel> UserLogin(UserLoginDto userLoginDto)
         {
             string token = _jwt.Authenticate(userLoginDto.Email, userLoginDto.Password);
-            if(token== null)
+            if (token == null)
             {
-                return Unauthorized("Yetkisiz Kullanim");
+                //   return Unauthorized("Yetkisiz Kullanim");
+                return new CustomResponseDto<TokenModel>() { Errors = new List<string>() {"Email or password is not correct!" }, StatusCode=401 };
             }
-            return Ok(token);
+            //return Ok(token);
+            return new CustomResponseDto<TokenModel> { Data = new TokenModel() { Token = token  }, StatusCode=200 };
         }
         [HttpPost("[Action]")]
         public async Task<IActionResult> Register(UserRegisterDto userRegisterDto)

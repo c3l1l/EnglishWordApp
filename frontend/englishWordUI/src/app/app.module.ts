@@ -21,6 +21,7 @@ import { SearchPipe } from './pipes/search.pipe';
 import { AdminComponent } from './admin/admin.component';
 import { WordAddComponent } from './admin/word-add/word-add.component';
 import { WordUpdateComponent } from './admin/word-update/word-update.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { WordUpdateComponent } from './admin/word-update/word-update.component';
     SearchPipe,
     AdminComponent,
     WordAddComponent,
-    WordUpdateComponent
+    WordUpdateComponent,
+    LoginComponent
 
   ],
   imports: [

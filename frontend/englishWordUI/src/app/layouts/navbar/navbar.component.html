@@ -14,6 +14,12 @@
                       <li class="nav-item">
                         <a class="nav-link active" aria-current="page" routerLinkActive="current-active" routerLink="/admin">Admin</a>
                       </li>
+                      <li class="nav-item" *ngIf="!authService.isUserAuth()">
+                        <a class="nav-link active" aria-current="page"  routerLink="/login">Login</a>
+                      </li>
+                      <li class="nav-item" *ngIf="authService.isUserAuth()">
+                        <button class="btn btn-outline-danger" (click)="logOut()">Logout</button>
+                      </li>
 
                     </ul>
 
