@@ -1,13 +1,24 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="admin"></ion-back-button>
+    </ion-buttons>
     <ion-title>word-add</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">word-add</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-item>
+    <ion-input type="text" label="expression" labelPlacement="floating" helperText="Enter an english expression"
+      errorText="Invalid text!" [(ngModel)]="wordAddModel.expression" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" fill="solid" label="definition" labelPlacement="floating"
+      helperText="Definition of expression" errorText="Invalid text!" [(ngModel)]="wordAddModel.definition"
+      required></ion-input>
+  </ion-item>
+  <ion-button expand="full" color="primary" (click)="save()">
+    <ion-icon name="log-in-outline"></ion-icon>
+    Save
+  </ion-button>
 </ion-content>

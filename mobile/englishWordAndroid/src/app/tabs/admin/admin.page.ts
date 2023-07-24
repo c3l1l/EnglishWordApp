@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterContentChecked, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlertController, ToastController } from '@ionic/angular';
+import { AlertController, ToastController, ViewWillEnter } from '@ionic/angular';
 import { WordModel } from 'src/app/models/word.model';
 import { ErrorService } from 'src/app/services/error.service';
 import { WordService } from 'src/app/services/word.service';
@@ -10,7 +10,7 @@ import { WordService } from 'src/app/services/word.service';
   templateUrl: './admin.page.html',
   styleUrls: ['./admin.page.scss'],
 })
-export class AdminPage implements OnInit {
+export class AdminPage implements ViewWillEnter {
 
   wordList: WordModel[] = [];
   id: number = 0;
@@ -24,10 +24,14 @@ export class AdminPage implements OnInit {
   ) {
     this.id = Number(activatedRoute.snapshot.paramMap.get("id"));
   }
-
-  ngOnInit() {
-    this.getAll();
+  ionViewWillEnter(): void {
+this.getAll()
   }
+
+
+  // ngOnInit() {
+  //   this.getAll();
+  // }
   getAll() {
     this.wordService.getAll().subscribe({
       next: (res: any) => {

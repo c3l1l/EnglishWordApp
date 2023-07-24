@@ -1,13 +1,23 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="admin"></ion-back-button>
+    </ion-buttons>
     <ion-title>word-update</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">word-update</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-item>
+      <ion-label position="floating">English Expression</ion-label>
+      <ion-input [(ngModel)]="wordModel.expression"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">English Expression</ion-label>
+    <ion-input [(ngModel)]="wordModel.definition"></ion-input>
+</ion-item>
+  <ion-button expand="full" color="primary" (click)="update()">
+    <ion-icon name="log-in-outline"></ion-icon>
+    Update
+  </ion-button>
 </ion-content>
